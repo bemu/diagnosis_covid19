@@ -1,0 +1,52 @@
+title = "covid19 PyTorch"
+
+[general]
+usecudnn = true
+usecudnnbenchmark = true
+gpuid = "2"
+loadpretrainedmodel = true
+random_seed = true
+pretrainedmodelpath = 'saves/trained_model.pt'
+use_3d = false
+use_lstm=false
+use_slice=true
+
+[input]
+batchsize = 2
+numworkers = 8
+shuffle = true
+
+[model]
+type = "Finetune-label"
+inputdim = 256
+hiddendim = 256
+numclasses = 2
+numlstms = 2
+
+[training]
+train = true
+epochs = 100
+startepoch = 0
+statsfrequency = 100
+data_root = '/mnt/data6/lung_jpgs_with_SEG'
+index_root = 'data/txt/train.txt'
+padding = 35
+learningrate = 1e-7
+momentum = 0.95
+weightdecay = 0.005
+save_prefix = "weights/circle_trained2"
+
+[validation]
+validate = true
+data_root = '/mnt/data6/lung_jpgs_with_SEG'
+index_root = 'data/txt/test.txt'
+padding = 35
+saveaccuracy = false
+
+
+[test]
+test = false
+data_root = '/mnt/data6/lung_jpgs_with_SEG'
+index_root = 'data/txt/2train_lidc_ild_train.txt'
+padding = 35
+saveaccuracy = false
