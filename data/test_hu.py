@@ -2,12 +2,12 @@ import SimpleITK as sitk
 import numpy as np
 from PIL import Image
 import cv2,os
-input_path='/mnt/data9/new_seg_set/resampled_data/test3'
-input_mask='/mnt/data9/new_seg_set/resampled_seg/test3'
+input_path='/Volumes/SDCARD/data/examples/data'
+input_mask='/Volumes/SDCARD/data/examples/seg'
 #input_path='/mnt/data7/resampled_data/train3'
 #input_mask='/mnt/data7/resampled_seg/train3'
-output_path_slices='/mnt/data9/new_seg_set/test_masked_jpgs3'
-output_path_raw='/mnt/data9/new_seg_set/test_raw_jpgs3'
+output_path_slices='/Volumes/SDCARD/data/examples/output_masked'
+output_path_raw='/Volumes/SDCARD/data/examples/output_raw'
 old_path='/mnt/data7/resampled_jpgs/masked_test3'
 #output_path_cropped='/mnt/data6/lung_resample_lungbox'
 #output_path_npy='/mnt/data6/lung_resample_npy'

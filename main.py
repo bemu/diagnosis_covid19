@@ -42,7 +42,7 @@ else:
 
 if(options["general"]["loadpretrainedmodel"]):
     # remove paralle module
-    pretrained_dict = torch.load(options["general"]["pretrainedmodelpath"])
+    pretrained_dict = torch.load(options["general"]["pretrainedmodelpath"], map_location=torch.device('cpu'))
     # load only exists weights
     model_dict = model.state_dict()
     pretrained_dict = {k: v for k, v in pretrained_dict.items() if k in model_dict.keys() and v.size() == model_dict[k].size()}

@@ -398,7 +398,9 @@ class NCPJPGtestDataset(Dataset):
                     for r1, r2 in zip(data_root, pre_lung_root):
                         D= glob.glob(r1 + '/*.n*')
                         D=[t for t in D if not (t+'\n') in lists]
-                        M= [item.split('_data')[0]+'_seg'+item.split('_data')[1] for item in D]
+                        M= [t for t in D if not (t+'\n') in lists]
+                        print(['masks: '] + M)
+                        print(['data: '] + D)
                         self.data+=D
                         self.mask+=M
                 else:
