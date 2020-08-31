@@ -77,6 +77,10 @@ run ```pip install -r requirements.txt``` to install all above packages.
 
 *. Radiomics tools: in radiomics.
 
+#### NOTE: converting dicom seris to nifti using dicom2nifti
+   - dicom2nifti.dicom_series_to_nifti('data/test/', 'data/nii/test/nocovid_test.nii', reorient_nifti=True)
+   - python testengine.py -p ./trained_model -o output/
+   
 Citation
 ----
 
